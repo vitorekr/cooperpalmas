@@ -25,8 +25,7 @@ const PostCard = ({ post }) => (
       <Link href={`/post/${post.slug}`}>{post.title}</Link>
     </h1>
     <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
-      <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 ">
-       
+      <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
         <Image
           unoptimized
           loader={grpahCMSImageLoader}
@@ -36,7 +35,6 @@ const PostCard = ({ post }) => (
           className="align-middle rounded-full"
           src={post.author.photo.url}
         />
-
         <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">{post.author.name}</p>
       </div>
       <div className="font-medium text-gray-700">
@@ -51,7 +49,7 @@ const PostCard = ({ post }) => (
     </p>
     <div className="text-center">
       <Link href={`/post/${post.slug}`}>
-        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Continue Reading</span>
+        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Saiba Mais</span>
       </Link>
     </div>
   </div>

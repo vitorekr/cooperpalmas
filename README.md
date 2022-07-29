@@ -18,11 +18,9 @@ Requirements
  * npm install or npm i 
 
 ##### Start project 
- * npm run dev
+ *  NODE_OPTIONS=--openssl-legacy-provider npm run dev 
 
 ##### IF SOME DEPENDENCIES ARE NOT WORKING WELL, TRY
  * npm audit fix
  * npm audit fix --force
 
-##### IF npm run dev NOT WORK TRY
- * NODE_OPTIONS=--openssl-legacy-provider npm run dev 

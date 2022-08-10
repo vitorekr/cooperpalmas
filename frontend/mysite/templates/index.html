@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color:  rgb(22, 78, 45)
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+        border-radius: 10px;
+        background-color: rgb(164, 201, 179);        
+    }
+    
+
+    .h2 card card-title {
+        align-items: center
+    }
+
+
+
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>              
+    <h2>
+        CooperBlog
+    </h2>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body" style='text-align: center'>
+                    <h2 class="card-title">{{ post.title }}</h2> 
+                    {% if post.image %}     
+                    <figure class="image">
+                            <img src="{{ post.image.url }}" style="border: 1px; border-radius: 12px; width: 100%; height: auto">
+                    </figure>
+                    {% endif %}                   
+                    <p class="card-text text-muted h6">{{ post.author }} </p>
+                    <p class="card-text text-muted h6">{{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}} </p>
+                    <p class="card-text">{{post.sub_content|slice:":15"}} ...</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Saiba mais &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    </div>
+</div>
+{%endblock%}

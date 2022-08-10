@@ -1,0 +1,45 @@
+{% block sidebar %}
+
+<style>
+        .card {
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+            transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+            padding: 14px 80px 18px 36px;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        }
+
+        .card card-text {
+            border: 4px solid;
+        }
+        
+
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="d-flex flex-column" ></div>
+<div class="col-md-4">    
+<div class="card my-4" style="border-radius: 20px; position: fixed">
+        <h5 class="card-header">Postagens Recentes</h5>
+        
+        {% for post in post_list %}
+    <div class="card-body">
+        <p class="card-text"> {{ post.title }}</p>
+        <a href="{% url 'post_detail' post.slug  %}"
+           class="btn btn-danger">Veja aqui!</a>
+    </div>
+    
+    {% endfor%}
+    
+</div>
+
+
+
+
+{% endblock sidebar %}

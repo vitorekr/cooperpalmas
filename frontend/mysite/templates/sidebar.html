@@ -1,45 +1,83 @@
 {% block sidebar %}
 
 <style>
-        .card {
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-            transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-            padding: 14px 80px 18px 36px;
-            cursor: pointer;
-        }
+  .card {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+      0.3s box-shadow,
+      0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    padding: 20px 80px 8px 36px;
+    cursor: pointer;
+    border: 1px solid;
+  }
 
-        .card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-        }
+  .card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  }
 
-        .card card-text {
-            border: 4px solid;
-        }
-        
-
+  .card card-text {
+    border: 4px solid;
+  }
 </style>
 
 <!-- Sidebar Widgets Column -->
-<div class="d-flex flex-column" ></div>
-<div class="col-md-4">    
-<div class="card my-4" style="border-radius: 20px; position: fixed">
-        <h5 class="card-header">Postagens Recentes</h5>
+
+<div class="container-sm ml-5">
+  <div
+    class="card my-4"
+    style="
+      border-radius: 20px;
+      position:fixed;
+      border-top: 1px;
+      align-self:center ;
+    "
+  >
+    <h5 class="card-header">Postagens Recentes</h5>
+    {% for post in post_list %} {% if forloop.counter < 4 %}
+    <div
+      class="card-body"      
+      style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000">
+
+       <p class="card-text text-muted h6">      
+        {% if post.image %}     
+                    <figure class="image">
+                            <img src="{{ post.image.url }}" style="border: 1px; border-radius: 60px; width: 60px; height: 60px;">  
+                    </figure> 
+                    <p class="card-text text-muted h6">{{ post.title }} <br>
+                      {{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}} </p>                   
+                    {% endif %}   
+                    
+        
+      </p>    
+      
+      <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger"
+        >Veja aqui!</a
+      >
+    </div>
+    {% endif %} {% endfor%}
+
+    <br />
+    <!--
+
+<div class="flex items-center w-full mb-4">    
+<div class="card my-8" style="border-radius: 20px; position: fixed">
+        <h5 class="card-header">Categorias</h5>
         
         {% for post in post_list %}
     <div class="card-body">
-        <p class="card-text"> {{ post.title }}</p>
-        <a href="{% url 'post_detail' post.slug  %}"
-           class="btn btn-danger">Veja aqui!</a>
+        <p class="card-text"> 
+        <a href="{% url 'post_detail' post.slug  %}">{{ post.category }}</a></p>
+          
     </div>
     
     {% endfor%}
     
 </div>
 
-
-
-
-{% endblock sidebar %}
+</div>-->
+  </div>
+  {% endblock sidebar %}
+</div>

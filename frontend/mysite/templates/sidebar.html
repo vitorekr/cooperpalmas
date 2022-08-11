@@ -1,16 +1,17 @@
 {% block sidebar %}
 
 <style>
-  .card {
-    border-radius: 18px;
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-      0.3s box-shadow,
-      0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-    padding: 20px 80px 8px 36px;
-    cursor: pointer;
-    border: 1px solid;
+  .card {    
+  display:flexbox;
+  flex-direction: column;
+  /*width: clamp(20rem, calc(20rem + 2vw), 22rem);*/
+  width:fit-content;
+  height:auto;
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+background: linear-gradient(to right, #FFFFFF, #ECE9E6);
   }
 
   .card:hover {
@@ -25,7 +26,7 @@
 
 <!-- Sidebar Widgets Column -->
 
-<div class="container-sm ml-5">
+<div class="col-md-4">
   <div
     class="card my-4"
     style="
@@ -38,21 +39,23 @@
     <h5 class="card-header">Postagens Recentes</h5>
     {% for post in post_list %} {% if forloop.counter < 4 %}
     <div
-      class="card-body"      
-      style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000">
+      class="card-body"
+      
+      style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000;"
+    >
 
-       <p class="card-text text-muted h6">      
+      <p class="card-text" style="font-size: medium" >
+      
         {% if post.image %}     
                     <figure class="image">
-                            <img src="{{ post.image.url }}" style="border: 1px; border-radius: 60px; width: 60px; height: 60px;">  
-                    </figure> 
-                    <p class="card-text text-muted h6">{{ post.title }} <br>
-                      {{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}} </p>                   
-                    {% endif %}   
+                            <img src="{{ post.image.url }}" style="border: 1px; border-radius: 60px; width: 60px; height: 60px">                             
+                    </figure>
                     
+                    {% endif %}   
         
-      </p>    
+      </p>
       
+      <p class="card-text" style="font-size: small">{{ post.category }}</p>
       <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger"
         >Veja aqui!</a
       >
@@ -81,3 +84,4 @@
   </div>
   {% endblock sidebar %}
 </div>
+

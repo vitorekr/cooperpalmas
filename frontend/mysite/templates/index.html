@@ -1,28 +1,111 @@
 {% extends "base.html" %}
 {% block content %}
 <style>
-    body {
+   @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
         font-family: "Roboto", sans-serif;
         font-size: 18px;
-        background-color:  rgb(22, 78, 45)
+        background-color:  rgb(22, 78, 45);
+        
     }
 
-    .head_text {
-        color: white;
-    }
 
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-        border-radius: 18px;
-        background-color: rgb(22, 121, 62);
-        border: 2px #000;        
-    }
-    
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
 
-    .h2 card card-title {
-        align-items: center
-    }
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
 
+.card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+}
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag + .tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+.tag-brown {
+  background: #D1913C;
+background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+}
+
+.user__info > small {
+  color: #667;
+}
 
 
 </style>
@@ -34,29 +117,49 @@
     </h2>
     </div>
 </header>
-<div class="container-sm ml-5 justify-content-space-center">
-    <div class="row">
+
+      
+   
+
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
-            {% for post in post_list %}
+            <div class="container">
             
-            <div class="card mb-4">
-                <div class="card-body" style='text-align: center'>
-                    <h2 class="card-title">{{ post.title }}</h2> 
-                    {% if post.image %}     
-                    <figure class="image">
-                            <img src="{{ post.image.url }}" style="border: 1px; border-radius: 12px; width: 100%; height: auto">
-                    </figure>
-                    {% endif %}                   
-                    <p class="card-text text-muted h6">{{ post.author }} </p>
-                    <p class="card-text text-muted h6">{{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}} </p>
-                    <p class="card-text">{{post.sub_content|slice:":15"}} ...</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Saiba mais &rarr;</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
-    </div>
+                <!-- Blog Entries Column -->
+                
+                    {% for post in post_list %}
+                    <div class="card" style="align-self: center">
+                      <div class="card__header">
+                        <img src="{{post.image.url}}" alt="card__image" class="card__image" width="600">
+                      </div>
+                      <div class="card__body">
+                        <span class="tag tag-blue"> {{post.category}}</span>
+                         <h4>{{post.title}}</h4> </a>
+                        <p>{{post.sub_content}}</p>
+                      </div>
+                      <div class="card__footer">
+                        <div class="user">
+                          <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
+                          <div class="user__info">
+                            <h5>{{post.author}}</h5>
+                            <small> <p>{{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}}</p></small>                            
+                          </div>
+                        
+                        </div>
+                        </div>
+                        <br>
+                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger">Saiba mais!</a >
+                            <br>
+                    </div>
+                    
+                    <br> 
+                    {% endfor %}                    
+                </div>                                     
+                      
+                      {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+                 
+</div>    
 </div>
 {%endblock%}
+
+        
+

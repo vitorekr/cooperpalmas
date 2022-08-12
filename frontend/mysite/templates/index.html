@@ -123,8 +123,9 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
         <!-- Blog Entries Column -->
             <div class="container">
-            
+                
                 <!-- Blog Entries Column -->
+               
                 
                     {% for post in post_list %}
                     <div class="card" style="align-self: center">
@@ -147,13 +148,13 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
                         </div>
                         </div>
                         <br>
-                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger">Saiba mais!</a >
+                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger">Ler mais...</a >
                             <br>
                     </div>
-                    
+                
                     <br> 
                     {% endfor %}                    
-                </div>                                     
+                </div>           </div>                          
                       
                       {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
                  

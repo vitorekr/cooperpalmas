@@ -37,7 +37,7 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6);
     "
   >
     <h5 class="card-header">Postagens Recentes</h5>
-    {% for post in post_list %} {% if forloop.counter < 4 %}
+    {% for post in test_list %}
     <div
       class="card-body"      
       style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000;" >
@@ -57,7 +57,7 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6);
         >Veja aqui!</a
       >
     </div>
-    {% endif %} {% endfor%}
+    {% endfor%}
 
     <br />
     <!--

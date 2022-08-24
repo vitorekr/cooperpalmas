@@ -1,17 +1,442 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 left  top">
-      <div class="card-body" style="text-align: center; border-radius: 20px; border: 1px #000">
-        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>        
-        <p class=" text-muted">{{ post.author }}</p>
-        <p class=" text-muted">{{ post.created_on.date.day}}/{{ post.created_on.date.month }}/{{ post.created_on.date.year }}</p>
-        <p class="card-text"> bla bla bla {{ object.content | safe }}</p>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Our Story - MeFamily Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="../templates/assets/css/style.css" rel="stylesheet">
+  
+  </head>
+<style>
+
+    .story-intro .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .story-intro .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .story-intro .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .story-intro .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .story-intro .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    
+    
+    .featured-members .content+.content {
+      margin-top: 100px;
+    }
+    
+    .featured-members .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .featured-members .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .featured-members .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .featured-members .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .featured-members .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /*--------------------------------------------------------------
+    # Members Cards
+    --------------------------------------------------------------*/
+    .containerMember {
+      margin-top: 100px;
+    }
+    
+    .containerMember .row .col-lg-4 {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .card {
+      position: relative;
+      padding: 0;
+      margin: 0 !important;
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 280px;
+      max-height: 340px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    }
+    
+    .card .card-image {
+      width: 100%;
+      max-height: 340px;
+    }
+    
+    .card .card-image img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+    }
+    
+    .card .card-content {
+      position: absolute;
+      bottom: -180px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      min-height: 140px;
+      width: 100%;
+      transition: bottom .4s ease-in;
+      box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .card:hover .card-content {
+      bottom: 0px;
+    }
+    
+    .card:hover .card-content h4,
+    .card:hover .card-content h5 {
+      transform: translateY(10px);
+      opacity: 1;
+    }
+    
+    .card .card-content h4,
+    .card .card-content h5 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      transition: 0.8s;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-40px);
+      transition-delay: 0.2s;
+    }
+    
+    .card .card-content h5 {
+      transition: 0.5s;
+      font-weight: 200;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+    
+    .card .card-content .social-icons {
+      list-style: none;
+      padding: 0;
+    }
+    
+    
+    .card .card-content .social-icons li {
+      margin: 10px;
+      transition: 0.5s;
+      transition-delay: calc(0.15s * var(--i));
+      transform: translateY(50px);
+    }
+    
+    
+    .card:hover .card-content .social-icons li {
+      transform: translateY(20px);
+    }
+    
+    .card .card-content .social-icons li a {
+      color: #fff;
+    }
+    
+    .card .card-content .social-icons li a span {
+      font-size: 1.3rem;
+    }
+    
+    @media(max-width: 991.5px) {
+      .container {
+          margin-top: 20px;
+      }
+    
+      .container .row .col-lg-4 {
+          margin: 20px 0px;
+      }
+    }
+    
+    /*--------------------------------------------------------------
+    # Event List
+    --------------------------------------------------------------*/
+    .event-list .card {
+      border: 0;
+      padding: 0 30px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .event-list .card-img {
+      width: calc(100% + 60px);
+      margin-left: -30px;
+      overflow: hidden;
+      z-index: 9;
+      border-radius: 0;
+    }
+    
+    .event-list .card-img img {
+      max-width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .event-list .card-body {
+      z-index: 10;
+      background: #fff;
+      border-top: 4px solid #fff;
+      padding: 30px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      margin-top: -60px;
+      transition: 0.3s;
+    }
+    
+    .event-list .card-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #24325d;
+    }
+    
+    .event-list .card-title a {
+      color: #24325d;
+      transition: 0.3s;
+    }
+    
+    .event-list .card-text {
+      color: #5e5e5e;
+    }
+    
+    .event-list .read-more a {
+      color: #777777;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+    
+    .event-list .read-more a:hover {
+      color: #006fbe;
+    }
+    
+    .event-list .card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .event-list .card:hover .card-body {
+      border-color: #006fbe;
+    }
+    
+    .event-list .card:hover .card-body .card-title a {
+      color: #006fbe;
+    }
+    
+    /*------------------------*/
+    p {
+      color: #1d284b; 
+      font-size: 24px;
+      font-family: Poppins, sans-serif;
+    }
+    
+    </style>
+<body>
+
+  <!-- ======= Header ======= -->
+
+
+  <header class="masthead">
+    <div class="overlay">            
+    <h1 align="center" style="color: #1d284b; font-size: 36px; font-family: Poppins, sans-serif;">
+        Regimento Interno       
+    </h1>
+    <img src="" alt="">
    
-  </div>
-</div>
+    </div>
 
-{% endblock content %}
+    <br>
+    <br>
+</header>
+
+  
+
+  <main id="main">
+
+ 
+    <section id="story-intro" class="story-intro">
+      <div class="container">
+
+        <p> Art. 1º - A Cooperativa Habitacional dos Profissionais de
+          Comunicação do DF - COOHAJ, sob a forma de sociedade de
+          responsabilidade limitada, sem fins lucrativos, constituída em 09
+          de março de 1989, com o prazo de duração indeterminado, sede e
+          foro em Brasília/DF; tem por objetivo proporcionar exclusivamente
+          aos seus associados, a construção e aquisição da casa própria, a
+          preço de custo, a prestação de serviços aos cooperados em áreas
+          correlatas e a sua integração sócio-comunitária, se regerá pela
+          Legislação em vigor, por seu Estatuto Social e pelo presente
+          Regimento Interno. <br><br><strong> DA SEDE E FUNCIONAMENTO</strong> <br> Art. 2º -
+          A sede da Cooperativa é no Setor de Rádio e Televisão Sul, Quadra
+          701, Bloco O, Entrada B, Sala 182, Ed. Novo Centro
+          Multiempresarial, 70340-000-Brasília-DF. <br> Art. 3º - O horário
+          de funcionamento da Coohaj será das 9h às 18h, ininterrupto. <br>
+          Art. 4º - Não podem ser contratados como funcionários parentes
+          consangüíneos e afins até o segundo grau em linha reta ou
+          colateral de diretores ou cooperados. <br> Art. 5º - Os
+          funcionários da Coohaj serão contratados mediante seleção de
+          currículos e por meio de empresa especializada no mercado. <br><br>
+          <strong> DO CAPITAL </strong> <br> Art. 6º - O Capital Social é indeterminado,
+          ilimitado quanto ao máximo e variável de acordo com o número de
+          associados e cotas partes. <br> Art. 7º - Cada cooperado deverá
+          integralizar o capital necessário para a consecução do seu
+          objetivo, que é a construção de sua unidade habitacional. <br>
+          Art. 8º - O Capital corresponde ao rateio do custo total do
+          empreendimento, <br> proporcional ao tamanho da unidade
+          habitacional, pelos integrantes de cada seção. <br> Parágrafo
+          Único - Entende-se por custo total do empreendimento, aquele
+          alocadopara: a) Aquisição do lote; b) Projetos arquitetônicos e
+          complementares; c) Execuçãode obras; d) Custos gerenciais; e)
+          Encargos financeiros; f) Impostos e taxas; g) Assessoria e
+          consultoria técnica; h) Tarifas públicas; i) Custos de divulgação,
+          marketing e adesões; j) Outros correlatos. <br> Art. 9º - O
+          Capital poderá ser integralizado de duas formas: mensalmente, na
+          data do débito em conta do cooperado e individualizado em função
+          de antecipações ou renegociações eventuais. <br> Art. 10 - Havendo
+          atrasos em qualquer pagamento, o cooperado fica sujeito à multa de
+          2%, mais juros de 1% ao mês.Parágrafo Único - O valor do pagamento
+          em atraso será corrigido pelo INCC, ou outro índice que venha a
+          substituí-lo. <br> Art. 11 - Quando o atraso for superior a 90
+          (noventa) dias, o cooperado será eliminado, e a cooperativa e a
+          seccional tomará as seguintes medidas: a) O ex-cooperado somente
+          receberá o valor pago até a data da inadimplência, com 15% de
+          deságio, encargos e multas. <br> Art. 12 - É lícito aos
+          cooperados, a qualquer tempo, transferir suas cotas e direitos a
+          outrem, pelo valor integralizado, desde que o pretendente preencha
+          os requisitos necessários ao seu ingresso na Cooperativa, obtenha
+          a aprovação da Diretoria da Cooperativa e pague a Taxa de
+          Transferência de cotas partes. <br><br> <strong> DOS PROJETOS
+          ARQUITETÔNICOS </strong><br> Art. 13 - O Projeto Arquitetônico de cada
+          empreendimento deverá atender à expectativa dos cooperados,
+          respeitando o código de obras e a previsão orçamentária. <br>
+          Parágrafo Único – Na hipótese de seccional criada para lançamento
+          futuro de novo empreendimento, em uma primeira etapa, a Assembléia
+          Seccional discutirá os aspectos fundamentais do projeto. Numa
+          segunda etapa, com base nos estudos preliminares e no orçamento
+          das obras a Cooperativa providenciará a apresentação de, no
+          mínimo, duas propostas de anteprojetos para aprovação. <br><br>
+         <strong> DAS LICITAÇÕES/COMPRAS </strong> <br> Art. 14 - As compras e contratações da
+          Cooperativa serão levadas a efeito através de pesquisa de mercado,
+          atendendo para a trilogia: economia/ qualidade/ segurança. <br>
+          Art. 15 - Qualquer contratação de construtora será submetida a
+          licitação e/ou aprovação da Assembléia Geral, conforme for o caso,
+          cujos procedimentos serão arquivados na Cooperativa. <br><br> <strong> DO
+          SUPORTE ADMINISTRATIVO </strong><br> Art. 16 - As despesas administrativas
+          serão cobertas pela Taxa de Suporte Administrativo, cobrada
+          mensalmente, na forma do Estatuto, do Termo de Adesão/ Ato
+          Cooperativo, da Assembléia e deste Regimento, até o final do
+          empreendimento a que o cooperado tiver aderido. <br> § 1 – O valor
+          da Taxa de Suporte Administrativo nesta data é de R$ 60,00 (
+          sessenta reais). <br> § 2 – A taxa de suporte administrativo de
+          ato cooperativo adicional a que o cooperado aderir terá seu valor
+          reduzido conforme o caso: a) A taxa de suporte administrativo de
+          ato cooperativo adicional neste momento será de um terço da taxa
+          normal, R$ 20,00 ( vinte reais). b) A taxa de suporte
+          administrativo do cooperado que não estiver inscrito em um dos
+          empreendimentos da Coohaj será igual à taxa de ato cooperativo
+          adicional, R$ 20,00 (vinte reais). <br> Art. 17 - O Suporte
+          Administrativo tem por objetivo cobrir as despesas gerais e o
+          ativo permanente da cooperativa e das seccionais. Parágrafo Único
+          - São despesas gerais: a) Salários e encargos dos empregados da
+          administração; b) Serviços de Contabilidade; c) Consultoria
+          Jurídica; d) Taxas de condomínio e outras da sede da Coohaj; e)
+          Taxas de tarifas públicas da administração; f) Despesas de
+          material de expediente; g) Imobilizado (bens de uso exclusivamente
+          administrativo); h) Assessoria e consultoria técnica de aspecto
+          geral; i) Outras despesas administrativas; j) Gastos correlatos.
+          <br><br> <strong> DA VERBA DE REPRESENTAÇÃO DA DIRETORIA </strong><br> Art. 18 - A
+          Diretoria da Cooperativa fará jus à verba de representação
+          prevista no Art. 60 dos Estatutos, levando em consideração: <br>
+          Parágrafo primeiro - A verba de representação terá um teto
+          estabelecido, aprovado em Assembléia Geral, em quantidade de
+          índices da construção civil- INCC, e estará incluída nos custos
+          gerenciais apropriados nos empreendimentos da cooperativa. <br>
+          Parágrafo segundo : - A verba dos Diretores Financeiro e
+          Administrativo corresponderá a um percentual de 80% da verba do
+          Diretor Presidente, aprovada em assembleia Geral. <br><br> <strong> DAS
+          DEMAIS TAXAS </strong><br> Art. 19 - A Taxa de Admissão à Cooperativa será
+          de 250,00 (duzentos e cinquenta reais). <br> Art. 20- A Taxa de
+          Transferência de Cotas-partes será equivalente ao valor de um
+          INCC. <br> Art. 21 – A contribuição para o fundo de investimento
+          será de 1% sobre o valor da unidade a que o cooperado estiver
+          aderindo,distribuída em todas as parcelas. <br> § Único – A
+          remuneração dos recursos aplicados no Fundo de investimento será
+          regulamentada pelo Regimento Interno do Fundo. <br> Art. 22 - Os
+          assuntos omissos serão resolvidos pela diretoria da Cooperativa ou
+          em Assembléia Geral ou Seccional, conforme o assunto. <br>
+          Brasília-DF, 26 de junho de 2008 </div></p>
+
+
+
+  </main><!-- End #main -->
+
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../templates/assets/js/main.js"></script>
+{% endblock %}
+</body>
+
+</html>

@@ -1,84 +1,38 @@
 {% block sidebar %}
 
 <style>
-  .card {    
-  display:flexbox;
-  flex-direction: column;
-  /*width: clamp(20rem, calc(20rem + 2vw), 22rem);*/
-  width:fit-content;
-  height:auto;
-  overflow: hidden;
-  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 1em;
-  background: #ECE9E6;
-background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-  }
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
 
-  .card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
-  }
-
-  .card card-text {
-    border: 4px solid;
-  }
 </style>
 
 <!-- Sidebar Widgets Column -->
-
-<div class="col-md-4">
-  <div
-    class="card my-4"
-    style="
-      border-radius: 20px;
-      position:fixed;
-      border-top: 1px;
-      align-self:center ;
-    "
-  >
-    <h5 class="card-header">Postagens Recentes</h5>
-    {% for post in post_list %} {% if forloop.counter < 4 %}
-    <div
-      class="card-body"      
-      style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000;" >
-      <p class="card-text" style="font-size: medium" >
-      
-        {% if post.image %}     
-                    <figure class="image">
-                            <img src="{{ post.image.url }}" style="border: 1px; border-radius: 60px; width: 60px; height: 60px">                             
-                    </figure>
-                    
-                    {% endif %}   
-        
-      </p>
-      
-      <p class="card-text" style="font-size: small">{{ post.category }}</p>
-      <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger"
-        >Veja aqui!</a
-      >
-    </div>
-    {% endif %} {% endfor%}
-
-    <br />
-    <!--
-
-<div class="flex items-center w-full mb-4">    
-<div class="card my-8" style="border-radius: 20px; position: fixed">
+<div class="col-md-4 float-right ">
+<div class="card my-4">
         <h5 class="card-header">Categorias</h5>
-        
-        {% for post in post_list %}
-    <div class="card-body">
-        <p class="card-text"> 
-        <a href="{% url 'post_detail' post.slug  %}">{{ post.category }}</a></p>
+        {% for post in post_list %} {% if forloop.counter  %}
+        <div
+          class="card-body"      
+          style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000;" >
+          <p class="card-text" style="font-size: medium" >
           
+            {% if post.image %}     
+                        <figure class="image">
+                                <img src="{{ post.image.url }}" >                             
+                        </figure>
+                        
+                        {% endif %}   
+            
+          </p>
+          
+          <p class="card-text" style="font-size: small">{{ post.category }}</p>
+          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger"
+            >Veja aqui!</a
+          >
     </div>
-    
-    {% endfor%}
-    
+    {%endif%} {%endfor%} 
+</div>
 </div>
 
-</div>-->
-  </div>
-  {% endblock sidebar %}
-</div>
-
+{% endblock sidebar %}

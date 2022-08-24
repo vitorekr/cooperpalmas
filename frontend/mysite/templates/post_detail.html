@@ -5,12 +5,12 @@
     <div class="col-md-8 card mb-4  mt-3 left  top">
       <div class="card-body" style="text-align: center; border-radius: 20px; border: 1px #000">
         <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>        
-        <p class=" text-muted">{{ post.author }}</p>
-        <p class=" text-muted">{{ post.created_on.date.day}}/{{ post.created_on.date.month }}/{{ post.created_on.date.year }}</p>
+        <p class=" text-muted">{{ post.author }} -
+        {{ post.created_on.date.day}}/{{ post.created_on.date.month }}/{{ post.created_on.date.year }}</p>
         <p class="card-text">{{ object.content | safe }}</p>
       </div>
     </div>
-    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    {% block sidebar %} {% include 'sidepost.html' %} {% endblock sidebar %}
   </div>
 </div>
 

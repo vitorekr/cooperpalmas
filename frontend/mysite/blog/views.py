@@ -6,6 +6,11 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   
     template_name = 'index.html'
 
+class PostIndex(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')   
+    template_name = 'landing.html'
+
+
 
 class PostDetail(generic.DetailView):
     model = Post
@@ -15,9 +20,10 @@ class PostDetail(generic.DetailView):
 #     detail_list = Post.objects.filter(status=1).order_by('-created_on')
 #     context = {'detail_list': detail_list}
 #     return render(request, 'post_detail.html', context)
-
+'''
 def landing(request):
-    return render(request, 'landing.html')
+    return render(request, 'landing.html')'''
+   
 
 def sobre(request):
     return render(request, 'teste.html')

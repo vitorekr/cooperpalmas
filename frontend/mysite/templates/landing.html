@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends "base.html" %}
+
 
 
 <!DOCTYPE html>
@@ -8,45 +8,423 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">-->
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <link href="mysite/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="mysite/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   
+
     <!-- Template Main CSS File -->
-    <link href="mysite/static/assets/css" rel="stylesheet">
+    <link href="../static/assets/css/style.css" rel="stylesheet">
   
 
 
 </head>
+{% block content %}
+<style>
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
+    #hero {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+  background: url("https://www.coohaj.org.br/COOHAJ/arquivos/Empreendimentos/Lago%20Oeste/Lago%20Oeste%20(1).JPG") top center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: -90px;
+  z-index: 99;
+  transition: 0.3s;
+}
+
+#hero:before {
+  content: "";
+  background: rgba(33, 123, 71, 0.8);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#hero p {
+  width: 80%;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  color: #fff;
+}
+
+#hero .carousel-control-prev,
+#hero .carousel-control-next {
+  width: 10%;
+}
+
+#hero .carousel-control-next-icon,
+#hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 48px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 2px solid #f6b024;
+}
+
+#hero .btn-get-started:hover {
+  background: #f6b024;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 60%;
+  }
+
+  #hero .carousel-control-prev,
+  #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+@media (max-width: 768px),
+(max-height: 700px) {
+  #hero {
+    height: 120vh;
+    padding: 100px 0;
+  }
+
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Icon Boxes
+--------------------------------------------------------------*/
+.icon-boxes {
+  padding-top: 0;
+  position: relative;
+  z-index: 100;
+  border-color: black;
+}
+
+.icon-boxes .icon-box {
+  padding: 40px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 5px 10px 29px 0 rgba(13, 20, 42, 0.2);
+  transition: all 0.3s ease-in-out;
+  border-radius: 18px;
+  border-color: black;
+  border: 2px solid
+}
+
+.icon-boxes .icon {
+  margin: 0 auto 20px auto;
+  display: inline-block;
+  text-align: center;
+
+}
+.icon-boxes .icon i {
+  font-size: 36px;
+  line-height: 1;
+  color: #f6b024;
+}
+
+.icon-boxes .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.icon-boxes .title a {
+  color: #189813;
+}
+
+.icon-boxes .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+  color: #115166;
+}
+
+
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+  background: linear-gradient(rgba(5, 74, 133, 0.8), rgba(5, 74, 133, 0.9)), url("https://images.pexels.com/photos/12671391/pexels-photo-12671391.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load") fixed center center;
+  background-size: cover;
+  padding: 120px 0;
+}
+
+.cta h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cta p {
+  color: #fff;
+}
+
+.cta .cta-btn {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 8px 26px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+  border-radius: 50px;
+  border: 2px solid #f6b024;
+  color: #fff;
+}
+
+.cta .cta-btn:hover {
+  background: #f6b024;
+}
+
+@media (max-width: 1024px) {
+  .cta {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 769px) {
+  .cta .cta-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact {
+  background: url("../img/contact-bg.png") left center no-repeat;
+  position: relative;
+}
+
+.contact:before {
+  content: "";
+  background:transparent;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.contact .container {
+  position: relative;
+  border-radius: 15px;
+}
+
+.contact .info {
+  width: 100%;
+}
+
+.contact .info i {
+  font-size: 20px;
+  background: #0880e8;
+  color: #fff;
+  float: left;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #043c6d;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #444444;
+}
+
+.contact .info .email,
+.contact .info .phone {
+  margin-top: 40px;
+}
+
+.contact .php-email-form {
+  width: 100%;
+  background:transparent;
+  
+  border-radius: 15px;
+  padding: auto;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  background-color:#189813;
+  border-radius: 15px;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: rgb(16, 9, 9);
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input {
+  height: 44px;
+  border-radius:  12px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+  border-radius: 15px;
+}
+
+.contact .php-email-form button[type=submit] {
+  border: 0;
+  padding: 10px 32px;
+  color: #0880e8;
+  transition: 0.4s;
+  border-radius: 50px;
+  border: 2px solid #0880e8;
+  background: #fff;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #0880e8;
+  color: #fff;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+</style>
 
 <body>
 
-
-        <header class="masthead">
-            <div class="overlay">            
-            <h1 align="center" style="color: #6f8f72; font-size: 36px; font-family: Poppins, sans-serif;">
-                   
-            </h1>
-            <img src="" alt="">
-           
-            </div>
-        
-            <br>
-            <br>
-        </header>
-          
-       
-        
-   
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
@@ -58,7 +436,7 @@
           <h2 class="animate__animated animate__fadeInDown">Bem vindos ao site <span>CooperPalmas</span></h2>
           <p class="animate__animated animate__fadeInUp">A nossa Cooperativa fica no Núcleo Rural Lago Oeste é a região mais ecológica, com natureza preservada e com as mais belas 
             paisagens naturais do Distrito Federal. Venha nos conhecer melhor e clique em saiba mais:</p>
-          <a href="{% url 'sobre' %}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba mais</a>
+          <a href="{% url 'sobre'  %}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba mais</a>
         </div>
       </div>
 
@@ -67,7 +445,7 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Convocações</h2>
           <p class="animate__animated animate__fadeInUp">Dia 99/99/9999 edital de Convocação. Assembleia elegerá nova Diretoria e o novo Conselho Fiscal.</p>
-          <a href="{% url 'blog' %}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba mais</a>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba mais</a>
         </div>
       </div>
 
@@ -81,25 +459,49 @@
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon bi bi-arrow-left-short" aria-hidden="true"></span>
       </a>
 
       <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon bi bi-arrow-right-short" aria-hidden="true"></span>
       </a>
-
     </div>
   </section><!-- End Hero -->
 
   <br><br>
   <main id="main">
-    <!-- ======= Icon Boxes Section ======= -->
+    
+    <section id="icon-boxes" class="icon-boxes">
+        
+        <div class="container">
+  
+          <div class="row">
+            {% for post in post_list %} {% if forloop.counter < 5 %}
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+                
+              <div class="icon-box">
+                <div class="icon">{{ post.img.url}}</i></div>
+                <div class="icon">{{ post.created_on.date.month}}/{{post.created_on.date.year}}</i></div>
+                <h4 class="title"><a href="{% url 'post_detail' post.slug  %}">{{post.title}}</a></h4>
+                <p class="description">{{post.category}}</p>
+              </div>
+             
+            </div>
+            {% endif %}  {% endfor %}
+
+
+          </div>
+  
+        </div>
+      </section><!-- End Icon Boxes Section -->
+
+    <!-- ======= Icon Boxes Section ======= 
     <section id="icon-boxes" class="icon-boxes">
       <div class="container">
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-            {% for post in post_list %} {% if forloop.counter < 4 %}
+            {% for post in post_list %} {% if forloop.counter < 5 %}
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">{{post.title}}</a></h4>
@@ -123,48 +525,49 @@
 
         <div class="row" data-aos="zoom-in">
           <div class="col-lg-9 text-center text-lg-start">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3>EDITAL DE CONVOCAÇÃO Nº 01 DE 2022</h3>
+            <p> ASSEMBLEIA GERAL ORDINÁRIA DA COOHAJ. </p>
+            <p>Convocamos os cooperados adimplentes da Cooperativa Habitacional dos Profissionais de Comunicação do Distrito Federal (Coohaj)...</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="{% url 'blog' %}">Mais...</a>
           </div>
         </div>
 
       </div>
     </section><!-- End Cta Section -->
 <br>
-<br>
+
 
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
+    <section id="contact" class="contact" >
+      <div class="container" data-aos="fade-up" style="background-color: transparent">
+<br>
         <div class="section-title">
-          <h2>Contact Us</h2>
+          <h2 align="center">Contato</h2>
         </div>
-
+        <br><br>
         <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
 
           <div class="col-lg-5">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Local:</h4>
+                <p>Rua 19, Lago Oeste-Sobradinho, BR-001</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>contato@cooperpalmas.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>Telefone:</h4>
+                <p>+55 (61) 99999-9999</p>
               </div>
 
             </div>
@@ -176,17 +579,17 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -194,6 +597,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <br>
             </form>
 
           </div>
@@ -202,24 +606,24 @@
 
       </div>
     </section><!-- End Contact Section -->
-    {% endblock %}
-  </main><!-- End #main -->
+    <br><br><br><br>
   
  
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <!-- Vendor JS Files -->
-  <script src="mysite/static/assets/vendor/aos/aos.js"></script>
-  <script src="mysite/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="mysite/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="mysite/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="mysite/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="mysite/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="mysite/static/assets/js/main.js"></script>
+  <script src="../static/assets/js/main.js" rel="stylesheet"></script>
 
+  {% endblock %}
+  </main><!-- End #main -->
+  
   
 
 </body>
-</html>

@@ -6,7 +6,7 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('', views.landing, name='home'),
+    path('', views.PostIndex.as_view(), name='home'),
     path('sobre/', views.sobre, name='sobre'),
     path('regimentos/', views.regimentos, name='regimentos'),
     path('estatuto/', views.estatuto, name='estatuto'),

@@ -1,0 +1,415 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Our Story - MeFamily Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="../templates/assets/css/style.css" rel="stylesheet">
+  
+  </head>
+<style>
+
+    .story-intro .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .story-intro .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .story-intro .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .story-intro .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .story-intro .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    
+    
+    .featured-members .content+.content {
+      margin-top: 100px;
+    }
+    
+    .featured-members .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .featured-members .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .featured-members .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .featured-members .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .featured-members .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /*--------------------------------------------------------------
+    # Members Cards
+    --------------------------------------------------------------*/
+    .containerMember {
+      margin-top: 100px;
+    }
+    
+    .containerMember .row .col-lg-4 {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .card {
+      position: relative;
+      padding: 0;
+      margin: 0 !important;
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 280px;
+      max-height: 340px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    }
+    
+    .card .card-image {
+      width: 100%;
+      max-height: 340px;
+    }
+    
+    .card .card-image img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+    }
+    
+    .card .card-content {
+      position: absolute;
+      bottom: -180px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      min-height: 140px;
+      width: 100%;
+      transition: bottom .4s ease-in;
+      box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .card:hover .card-content {
+      bottom: 0px;
+    }
+    
+    .card:hover .card-content h4,
+    .card:hover .card-content h5 {
+      transform: translateY(10px);
+      opacity: 1;
+    }
+    
+    .card .card-content h4,
+    .card .card-content h5 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      transition: 0.8s;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-40px);
+      transition-delay: 0.2s;
+    }
+    
+    .card .card-content h5 {
+      transition: 0.5s;
+      font-weight: 200;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+    
+    .card .card-content .social-icons {
+      list-style: none;
+      padding: 0;
+    }
+    
+    
+    .card .card-content .social-icons li {
+      margin: 10px;
+      transition: 0.5s;
+      transition-delay: calc(0.15s * var(--i));
+      transform: translateY(50px);
+    }
+    
+    
+    .card:hover .card-content .social-icons li {
+      transform: translateY(20px);
+    }
+    
+    .card .card-content .social-icons li a {
+      color: #fff;
+    }
+    
+    .card .card-content .social-icons li a span {
+      font-size: 1.3rem;
+    }
+    
+    @media(max-width: 991.5px) {
+      .container {
+          margin-top: 20px;
+      }
+    
+      .container .row .col-lg-4 {
+          margin: 20px 0px;
+      }
+    }
+    
+    /*--------------------------------------------------------------
+    # Event List
+    --------------------------------------------------------------*/
+    .event-list .card {
+      border: 0;
+      padding: 0 30px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .event-list .card-img {
+      width: calc(100% + 60px);
+      margin-left: -30px;
+      overflow: hidden;
+      z-index: 9;
+      border-radius: 0;
+    }
+    
+    .event-list .card-img img {
+      max-width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .event-list .card-body {
+      z-index: 10;
+      background: #fff;
+      border-top: 4px solid #fff;
+      padding: 30px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      margin-top: -60px;
+      transition: 0.3s;
+    }
+    
+    .event-list .card-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #24325d;
+    }
+    
+    .event-list .card-title a {
+      color: #24325d;
+      transition: 0.3s;
+    }
+    
+    .event-list .card-text {
+      color: #5e5e5e;
+    }
+    
+    .event-list .read-more a {
+      color: #777777;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+    
+    .event-list .read-more a:hover {
+      color: #006fbe;
+    }
+    
+    .event-list .card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .event-list .card:hover .card-body {
+      border-color: #006fbe;
+    }
+    
+    .event-list .card:hover .card-body .card-title a {
+      color: #006fbe;
+    }
+    
+    /*------------------------*/
+    p {
+      color: #1d284b; 
+      font-size: 24px;
+      font-family: Poppins, sans-serif;
+    }
+    
+    </style>
+<body>
+
+  <!-- ======= Header ======= -->
+
+ 
+
+
+  <main id="main">
+
+    <header class="masthead">
+      <div class="overlay">            
+      <h1 align="center" style="color: #6f8f72; font-size: 36px; font-family: Poppins, sans-serif;">
+          Estatuto      
+      </h1>
+      <img src="" alt="">
+     
+      </div>
+  
+      <br>
+      <br>
+  </header>
+ 
+    <section id="story-intro" class="story-intro">
+      <div class="container">
+        <strong>ESTATUTO DA COOPERATIVA HABITACIONAL DOS PROFISSIONAIS DE COMUNICA&Ccedil;&Atilde;O DO DISTRITO FEDERAL &ndash; COOHAJ</strong> <br/>
+        <i>Estatuto aprovado em assembléia de 9/3/1989, com alterações aprovadas nas assembléias de 14/03/1998, 25/03/2000, 27/03/2004, 19/04/2006, 08/07/2008 e 19/8/2017.</i>
+      </br><br><br>
+
+        <strong>Capítulo I</strong>
+        <br>
+        <strong>Da constituição, sede, prazo e área de ação.</strong><br>
+        Art. 1º. Constituída em Assembléia Geral realizada em 9 de março de 1989 sob a forma de sociedade civil de responsabilidade limitada, sem fins de lucro, a 
+        COOPERATIVA HABITACIONAL DOS PROFISSIONAIS DE COMUNICAÇÃO DO DISTRITO FEDERAL – COOHAJ – se regerá pelo presente Estatuto e pelas disposições da 
+        Lei nº 5.764 de 16 de dezembro de 1971. <br>
+        
+         Art. 2º. A Cooperativa tem sede, administração e foro em Brasília, Distrito Federal. <br>
+
+         Art. 3º. O prazo de duração da Cooperativa é o necessário ao alcance dos seus objetivos sociais adiante definidos e o seu exercício social coincidirá com o ano civil, 
+         devendo ao seu término ser levantado o balanço geral. <br>
+
+         Art. 4º. A área de ação da Cooperativa é o território nacional. 
+         <br><br>
+
+        <strong>Capítulo II</strong>
+        <br>
+        <strong>Dos objetivos sociais.</strong> <br>
+        Art. 5º. A Cooperativa tem por objetivo proporcionar, exclusivamente aos cooperados, a construção e aquisição de unidades habitacionais e a sua integração 
+        sócio-comunitária. <br>
+
+        Parágrafo único – A Cooperativa poderá oferecer aos condomínios constituídos em seus empreendimentos serviços de administração, como a emissão e cobrança de boletos, 
+        assessoria jurídica e contábil, e participar da organização de aquisições coletivas de bens e produtos para o seus cooperados, com vistas à obtenção de preços 
+        mais baratos. <br>
+
+        Art. 6º. No cumprimento de seu programa de ação, a Cooperativa se propõe a: <br>
+        I - escolher e contratar a aquisição de terrenos e/ou benfeitorias e equipamentos indispensáveis à execução de seus empreendimentos e ao pleno alcance de seus objetivos; <br>
+        II - contratar a construção ou aquisição de unidades habitacionais; <br>
+        III - organizar, contratar e manter todos os serviços administrativos, técnicos e sociais, visando alcançar seus objetivos; 
+        <br><br>
+
+
+
+
+        <strong>Capítulo III</strong>
+        <br>
+        <strong>Dos soócios, suas responsabilidades, direitos e deveres.</strong>
+        <br><br>
+
+
+
+        <strong>Capítulo IV</strong>
+        <br>
+        <strong>Dos recursos econômicos.</strong>
+        <br><br>
+
+
+
+
+
+        <strong>Capítulo V</strong>
+        <br>
+        <strong>Dos livros e registros.</strong>
+        <br><br>
+
+
+
+
+        <strong>Capítulo VI</strong>
+        <br>
+        <strong>Dos órgãos sociais.</strong>
+        <br><br>
+
+
+
+
+        <strong>Capítulo VI</strong>
+        <br>
+        <strong>Da constituição, sede, prazo e área de ação</strong>
+        <br><br>
+
+  </main><!-- End #main -->
+
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../templates/assets/js/main.js"></script>
+  
+{% endblock %}
+
+
+</body>
+<footer>
+  <footer class="bg-light text-center text-lg-start">
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgba(33, 123, 71, 0.8);">
+© 2022 Copyright:
+<a class="text-dark" href="">CooperPalmas</a>
+</div>
+</footer>
+
+</html>

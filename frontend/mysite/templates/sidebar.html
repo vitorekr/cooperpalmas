@@ -10,29 +10,24 @@
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4 float-right ">
 <div class="card my-4">
-        <h5 class="card-header">Categorias</h5>
-        {% for post in post_list %} {% if forloop.counter  %}
-        <div
-          class="card-body"      
-          style="align-content: flex-start; border-top: 10px; align-self: center; text-align: center; border: 10px #000;" >
-          <p class="card-text" style="font-size: medium" >
-          
-            {% if post.image %}     
-                        <figure class="image">
-                                <img src="{{ post.image.url }}" >                             
-                        </figure>
-                        
-                        {% endif %}   
-            
-          </p>
-          
-          <p class="card-text" style="font-size: small">{{ post.category }}</p>
-          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger"
-            >Veja aqui!</a
-          >
+        <h4 class="card-header" align="center" >Categorias</h4>
+    <div class="card-body">
+      <p>
+        <a href="{% url 'blog' %}"
+           class="btn btn-danger">Notícias</a></p>
+
+           <p>
+                <a href="{% url 'blog' %}"
+                   class="btn btn-danger">Eventos</a></p>
+
+                   <p>
+                        <a href="{% url 'blog' %}"
+                           class="btn btn-danger">Transparência</a></p>
     </div>
-    {%endif%} {%endfor%} 
 </div>
+
+
+
 </div>
 
 {% endblock sidebar %}

@@ -4,36 +4,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Our Story - MeFamily Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="../templates/assets/css/style.css" rel="stylesheet">
+  
+  </head>
 
-  <title>Our Story - MeFamily Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="../templates/assets/css/style.css" rel="stylesheet">
-
-</head>
 <style>
 
-    .story-intro .content h3 {
+.story-intro .content h3 {
       font-weight: 600;
       font-size: 26px;
     }
@@ -57,269 +60,62 @@
       margin-bottom: 0;
     }
     
-    
-    
-    .featured-members .content+.content {
-      margin-top: 100px;
-    }
-    
-    .featured-members .content h3 {
-      font-weight: 600;
-      font-size: 26px;
-    }
-    
-    .featured-members .content ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .featured-members .content ul li {
-      padding-bottom: 10px;
-    }
-    
-    .featured-members .content ul i {
-      font-size: 20px;
-      padding-right: 4px;
-      color: #006fbe;
-    }
-    
-    .featured-members .content p:last-child {
-      margin-bottom: 0;
-    }
-    
-    /*--------------------------------------------------------------
-    # Members Cards
-    --------------------------------------------------------------*/
-    .containerMember {
-      margin-top: 100px;
-    }
-    
-    .containerMember .row .col-lg-4 {
-      display: flex;
-      justify-content: center;
-    }
-    
-    .card {
-      position: relative;
-      padding: 0;
-      margin: 0 !important;
-      border-radius: 20px;
-      overflow: hidden;
-      max-width: 280px;
-      max-height: 340px;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    
-    }
-    
-    .card .card-image {
-      width: 100%;
-      max-height: 340px;
-    }
-    
-    .card .card-image img {
-      width: 100%;
-      max-height: 340px;
-      object-fit: cover;
-    }
-    
-    .card .card-content {
-      position: absolute;
-      bottom: -180px;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(15px);
-      min-height: 140px;
-      width: 100%;
-      transition: bottom .4s ease-in;
-      box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .card:hover .card-content {
-      bottom: 0px;
-    }
-    
-    .card:hover .card-content h4,
-    .card:hover .card-content h5 {
-      transform: translateY(10px);
-      opacity: 1;
-    }
-    
-    .card .card-content h4,
-    .card .card-content h5 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      text-align: center;
-      transition: 0.8s;
-      font-weight: 500;
-      opacity: 0;
-      transform: translateY(-40px);
-      transition-delay: 0.2s;
-    }
-    
-    .card .card-content h5 {
-      transition: 0.5s;
-      font-weight: 200;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-    }
-    
-    .card .card-content .social-icons {
-      list-style: none;
-      padding: 0;
-    }
-    
-    
-    .card .card-content .social-icons li {
-      margin: 10px;
-      transition: 0.5s;
-      transition-delay: calc(0.15s * var(--i));
-      transform: translateY(50px);
-    }
-    
-    
-    .card:hover .card-content .social-icons li {
-      transform: translateY(20px);
-    }
-    
-    .card .card-content .social-icons li a {
-      color: #fff;
-    }
-    
-    .card .card-content .social-icons li a span {
-      font-size: 1.3rem;
-    }
-    
-    @media(max-width: 991.5px) {
-      .container {
-          margin-top: 20px;
-      }
-    
-      .container .row .col-lg-4 {
-          margin: 20px 0px;
-      }
-    }
-    
-    /*--------------------------------------------------------------
-    # Event List
-    --------------------------------------------------------------*/
-    .event-list .card {
-      border: 0;
-      padding: 0 30px;
-      margin-bottom: 60px;
-      position: relative;
-    }
-    
-    .event-list .card-img {
-      width: calc(100% + 60px);
-      margin-left: -30px;
-      overflow: hidden;
-      z-index: 9;
-      border-radius: 0;
-    }
-    
-    .event-list .card-img img {
-      max-width: 100%;
-      transition: all 0.3s ease-in-out;
-    }
-    
-    .event-list .card-body {
-      z-index: 10;
-      background: #fff;
-      border-top: 4px solid #fff;
-      padding: 30px;
-      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-      margin-top: -60px;
-      transition: 0.3s;
-    }
-    
-    .event-list .card-title {
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 20px;
-      color: #24325d;
-    }
-    
-    .event-list .card-title a {
-      color: #24325d;
-      transition: 0.3s;
-    }
-    
-    .event-list .card-text {
-      color: #5e5e5e;
-    }
-    
-    .event-list .read-more a {
-      color: #777777;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 12px;
-      transition: 0.3s;
-    }
-    
-    .event-list .read-more a:hover {
-      color: #006fbe;
-    }
-    
-    .event-list .card:hover img {
-      transform: scale(1.1);
-    }
-    
-    .event-list .card:hover .card-body {
-      border-color: #006fbe;
-    }
-    
-    .event-list .card:hover .card-body .card-title a {
-      color: #006fbe;
-    }
-    
-    
+
+  
+
+
+
     </style>
+
 <body>
 
-  <!-- ======= Header ======= -->
   <header class="masthead">
     <div class="overlay">            
-    <h1 align="center" style="color: #1e4a74; font-size: 36px; font-family: Poppins, sans-serif;">
-        Nossa História
-       
+    <h1 align="center" style="color: #6f8f72; font-size: 36px; font-family: Poppins, sans-serif;">
+           
     </h1>
+    <img src="" alt="">
    
     </div>
 
     <br>
     <br>
 </header>
-
   
-
   <main id="main">
 
- 
+    <header class="masthead">
+      <div class="overlay">            
+      <h1 align="center" style="color: #6f8f72; font-size: 36px; font-family: Poppins, sans-serif;">
+          Sobre Nós      
+      </h1>
+      <img src="" alt="">
+     
+      </div>
+  
+      <br>
+      <br>
+  </header>
 
  <!-- ======= Story Intro Section 1 ======= -->
  <section id="story-intro" class="story-intro">
     <div class="container">
-
       <div class="row">
         <div class="col-lg-4 order-xlg-2 order-lg-2 justify-content-center" >
-            <div class="col-lg-8 justify-content-center"></div>
-            <div class="card p-0">
-                <div class="card-image" >
-                    <img src="https://images.pexels.com/photos/13173092/pexels-photo-13173092.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" align-self="end" class="img" 
+            
+            <div class="card p-0" style=" max-width: 100%; max-height: 500px; cursor: pointer;  object-fit: scale-down; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
+                <div class="card-image" >                
+                    <img src="https://images.pexels.com/photos/12461880/pexels-photo-12461880.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="img" 
                         alt="">
                 </div>
                 <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">July</h4>
-                    <h5>CEO</h5>
+                    <h4 class="pt-2">Montanha</h4>
+                    <h5>Norte Noruega</h5>
         </div>
     </div>
 </div>
         <div class="col-lg-8 pt-4 pt-lg-0 order-2 order-lg-1">
-          <h3>CooperPalmas.</h3>
+          <h3 style="color:#164a4f" align="center">CooperPalmas.</h3><br>
           <p class="fst-italic">
             Apesar de já criada, a CooperPalmas ainda precisa registrar sua ata, seu Estatuto e tirar o CNPJ. 
             Enquanto isso, os boletos continuarão sendo emitido pela Coohaj e os pagamentos deverão ser feitos da mesma forma, 
@@ -338,63 +134,61 @@
 
     </div>
     <br>
-  </section><!-- End Story 
+  </section> <br> <!-- End Story
     Intro Section 2 -->
-
+<br>
   <section id="story-intro" class="story-intro">
-    <div class="container">
-
+    <div class="container" >
       <div class="row">
         <div class="col-lg-4 order-xlg-2 order-lg-1 justify-content-center" >
-          <div class="col-lg-8 justify-content-center"></div>
-            <div class="card p-0">
+         
+            <div class="card p-0"  style=" max-width: 100%; max-height: 500px; cursor: pointer;  object-fit: contain; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
                 <div class="card-image" >
                     <img src="https://www.coohaj.org.br/COOHAJ/arquivos/Empreendimentos/Lago%20Oeste/Lago%20Oeste%20(2).jpg" align-self="end" class="img" width="100%" height="750px" max-width="100%" max-height="auto" object-fit='cover'
                         alt="">
                 </div>
                 <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">July</h4>
-                    <h5>CEO</h5>
+                    <h4 class="pt-2">Portaria da Cooperativa</h4>
+                    <h5>2009</h5>
         </div>
     </div>
 </div>
+
 <div class="col-lg-8 pt-4 pt-lg-0 order-2 order-lg-2">
-          <h3>O LAGO OESTE.</h3>
-          <p class="fst-italic">
+          <h3 style="color:#164a4f" align="center">O LAGO OESTE.</h3>          
             <p class="fst-italic">
               O Núcleo Rural Lago Oeste é a região mais ecológica, com natureza preservada e com as mais belas paisagens naturais do Distrito Federal. Localizado na Região Administrativa 
               de Sobradinho, a cerca de 25 km da Torre de TV do Eixo Monumental, o Lago Oeste está  situado na APA do Planalto Central (ICMBio) e na APA do Cafuringa 
               (IBRAM-DF), e abriga em sua área a Reserva Biológica da Contagem e parte do Parque Nacional de Brasília.
             </p>
             <ul>              
-              <li><i class="bi bi-check"></i> Nas propriedades participantes, as pessoas vivenciam experiências únicas, 
+              <li> Nas propriedades participantes, as pessoas vivenciam experiências únicas, 
                 repletas de sabores e aromas, e têm à disposição muita diversão, lazer, descanso e aventura.</li>
                 <li><i class="bi bi-check"></i> Apenas a 22km do centro de Brasília!.</li>
         </div>
       </div>
-
     </div>
     <br>
   </section><!-- End Story Intro Section -->
-
+<br>
  <!-- ======= Story Intro Section  3 ======= -->
  <section id="story-intro" class="story-intro">
   <div class="container">
-
     <div class="row">
       <div class="col-lg-4 order-xlg-2 order-lg-2 justify-content-center" >
-          <div class="col-lg-8 justify-content-center"></div>
-          <div class="card p-0">
+          
+          <div class="card p-0"  style=" max-width: 100%; max-height: 500px; cursor: pointer;  object-fit: contain; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
               <div class="card-image" >
                   <img src="https://imgbr.imovelwebcdn.com/avisos/2/29/42/60/77/22/720x532/1538005490.jpg" align-self="end" class="img"  align-self="end" class="img" width="100%" height="750px" max-width="100%" max-height="auto" object-fit='cover'
                       alt="">
               </div>
               <div class="card-content d-flex flex-column align-items-center">
-                  <h4 class="pt-2">July</h4>
-                  <h5>CEO</h5>
+                  <h4 class="pt-2">Portaria da Cooperativa</h4>
+                  <h5>2014</h5>
       </div>
   </div>
 </div>
+
       <div class="col-lg-8 pt-4 pt-lg-0 order-2 order-lg-1">
         <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
         <p class="fst-italic">
@@ -409,73 +203,25 @@
         </ul>
       </div>
     </div>
-
-  </div>
-  <br>
+   
 </section><!-- End Story Intro Section -->
 
+<br><br><br><br><br><br>
+<h1 align="center" style="color: #164a4f; font-size: 40px; font-family: Poppins, sans-serif;"> <u> Diretoria</u></h1>
+<br>
+<br><br>
+<h1 align="center" style="color: #164a4f; font-size: 20px; font-family: Poppins, sans-serif;"> <u> Conselho de ética </u></h1>
 
-    <!-- ======= Members Section ======= -->
-    <section id="containerMember" class="containerMember">
-      <h1 align="center" style="color: #1d284b; font-size: 36px; font-family: Poppins, sans-serif;">Diretoria</h1>
-      <div class="containerMember">
+<br><br><br><br><br>
+{% block diretoria %} {% include 'diretoria.html' %} {% endblock diretoria %}
+</div>
+<br>
 
-         <div class="row">
-              <div class="col-lg-4">
-                  <div class="card p-0">
-                      <div class="card-image">
-                          <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img"
-                              alt="">
-                      </div>
-                      <div class="card-content d-flex flex-column align-items-center">
-                          <h4 class="pt-2">July</h4>
-                          <h5>CEO</h5>
-  
-                         
-                      </div>
-                  </div>
-              </div>
-              <br><br><br>
-              <div class="col-lg-4">
-                  <div class="card p-0">
-                      <div class="card-image">
-                          <img src="https://images.pexels.com/photos/381843/pexels-photo-381843.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img"
-                              alt="">
-                      </div>
-                      <div class="card-content d-flex flex-column align-items-center">
-                          <h4 class="pt-2">Bruce</h4>
-                          <h5>Communication</h5>
-  
-                          
-                      </div>
-                  </div>
-              </div>
-              <br>
-              <div class="col-lg-4">
-                  <div class="card p-0">
-                      <div class="card-image">
-                          <img src="https://images.pexels.com/photos/139829/pexels-photo-139829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img"
-                              alt="">
-                      </div>
-                      <div class="card-content d-flex flex-column align-items-center">
-                          <h4 class="pt-2">Ashley</h4>
-                          <h5>Finnances</h5>
-  
-                          
-                      </div>
-                  </div>
-              </div>
-  
-          </div>
-      </div>
+<br><br><br><br>
+{% endblock %}
 
-      <br>
-      <br>
-    </section><!-- End Members Section -->
 
-  </main><!-- End #main -->
-
- 
+</main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -488,7 +234,7 @@
 
   <!-- Template Main JS File -->
   <script src="../templates/assets/js/main.js"></script>
-{% endblock %}
+
+
 </body>
 
-</html>

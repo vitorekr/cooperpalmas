@@ -16,6 +16,9 @@ class PostDetail(generic.DetailView):
 #     context = {'detail_list': detail_list}
 #     return render(request, 'post_detail.html', context)
 
+def landing(request):
+    return render(request, 'landing.html')
+
 def sobre(request):
     return render(request, 'teste.html')
 
@@ -24,6 +27,9 @@ def land_page(request):
 
 def regimentos(request):
     return render(request, 'regimentos.html')
+
+def estatuto(request):
+    return render(request, 'estatuto.html')
 
 def contato(request):
     return render (request, 'contact.html')

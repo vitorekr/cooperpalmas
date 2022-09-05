@@ -1,98 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 <style>
-   @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+ :root {
+  --gradient: linear-gradient(to left top, #0cdf28 10%, #7aee5a 90%) !important;
 }
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  margin-block: 2rem;
-  gap: 2rem;
-}
-
 img {
-  max-width: 100%;
-  display: block;
+  width: 100%;
+  display:flexbox;
   object-fit: cover;
 }
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
 
-    .head_text {
-        color: white;
-    }
+body {
+  background: rgb(52, 49, 49) !important;
+}
 
-    .card {
+.card {
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 100%;
+  height: auto;
   overflow: hidden;
   box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 1em;
-  background: #ECE9E6;
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-
-}
-
-.card__body {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-
-
-.tag {
-  align-self: flex-start;
-  padding: .25em .75em;
-  border-radius: 1em;
-  font-size: .75rem;
-}
-
-.tag + .tag {
-  margin-left: .5em;
-}
-
-.tag-blue {
-  background: #56CCF2;
-background: linear-gradient(to bottom, #2F80ED, #56CCF2);
-  color: #fafafa;
-}
-
-.tag-brown {
-  background: #D1913C;
-background: linear-gradient(to bottom, #FFD194, #D1913C);
-  color: #fafafa;
-}
-
-.tag-red {
-  background: #cb2d3e;
-background: linear-gradient(to bottom, #ef473a, #cb2d3e);
-  color: #fafafa;
-}
-
-.card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
-
-.card__footer {
-  display: flex;
-  padding: 1rem;
-  margin-top: auto;
+  background: #222;
+  border: 1px solid #41b957;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+  border-radius: 18px;
+  
+  
 }
 
 .user {
@@ -102,16 +37,51 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .user__image {
   border-radius: 50%;
+  position: relative;
+}
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
 }
 
 .user__info > small {
   color: #667;
 }
-    
+
+
+
+.btn {
+  border: 5px solid;
+  border-image-slice: 1;
+  background: var(--gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  border-image-source:  var(--gradient) !important; 
+  text-decoration: none;
+  transition: all .4s ease;
+}
+
+.btn:hover, .btn:focus {
+      background: var(--gradient) !important;
+  -webkit-background-clip: none !important;
+  -webkit-text-fill-color: #fff !important;
+  border: 5px solid #fff !important; 
+  box-shadow: #222 1px 0 10px;
+  text-decoration: underline;
+}
 </style>
 
 <header class="masthead">
     <div class="overlay"></div>
+    <br><br><br>
     <div class="container">
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
@@ -123,25 +93,40 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
             </div>
         </div>
     </div>
+    <h1> 
+
+    </h1>
+    <h1>
+
+    </h1>
 </header>
-<div class="container">
+
+<br><br>
+<body>
+  
+
+<div class="container" style="display: flex; flex-wrap: wrap; justify-content: center;  max-width: 1200px; margin-block: 2rem; gap: 2rem;"> 
     <div class="row">
+      
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
-            <div class="card" style="align-self: center">
+            <div class="card" style="align-self: center;">           
               <div class="card__header">
-                <img src="{{post.image.url}}" alt="card__image" class="card__image" style="width:768; max-width:100%; height:470; max-height:auto; object-fit:cover;">
+                <img src="{{post.image.url}}" alt="card__image" class="card__image" width="auto" >
               </div>
               <div class="card__body">
-                <span class="tag tag-blue"> <a href="">{{post.category}}</a></span>
-                 <h4>{{post.title}}</h4> </a>
-                <p>{{post.sub_content}}</p>
+                <br>
+                
+                 <h4 style="font-size:large;" align="center">{{post.title}}</h4> 
+                 <br>
+                
                 
               </div>
               <div class="card__footer">
-                <div class="user">
-                  <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="user__image" class="user__image" style="size: 100px; width:70px">
+                <div class="user align-content-lg-between">
+                <p>  <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="user__image" class="user__image" style="size: 100px; width:70px; border-radius: 46px; margin: 15px; 
+                  max-width: 100%;  display: block;  object-fit: cover;"></p>
                   <div class="user__info">
                     <h5>{{post.author}}</h5>
                     <small> <p>{{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}}</p></small>                            
@@ -160,4 +145,8 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
     </div>
 </div>
+
+  
+</body>
+
 {%endblock%}

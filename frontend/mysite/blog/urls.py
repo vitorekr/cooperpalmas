@@ -6,9 +6,10 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('', views.sobre, name='home'),
-    path('sobre/', views.contato, name='contato'),
+    path('', views.landing, name='home'),
+    path('sobre/', views.sobre, name='sobre'),
     path('regimentos/', views.regimentos, name='regimentos'),
+    path('estatuto/', views.estatuto, name='estatuto'),
     path('blog/', views.PostList.as_view(), name='blog'),
     path('recent/', views.testAA, name='recents'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),

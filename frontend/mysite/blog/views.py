@@ -45,8 +45,6 @@ def testAA(request):
     context = {'test_list': test_list}
     return render(request, 'post_detail.html', context)
 
-
-
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.filter(status=Post.ACTIVE)    

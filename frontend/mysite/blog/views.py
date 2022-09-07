@@ -26,7 +26,7 @@ def landing(request):
    
 
 def sobre(request):
-    return render(request, 'teste.html')
+    return render(request, 'sobre.html')
 
 def land_page(request):
     return render(request, 'index.html')

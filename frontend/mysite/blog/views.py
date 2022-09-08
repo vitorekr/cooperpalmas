@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   
-    template_name = 'blogTest.html'
+    template_name = 'index.html'
 
 class PostIndex(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   

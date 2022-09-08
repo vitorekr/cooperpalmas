@@ -10,7 +10,6 @@ urlpatterns = [
     path('regimentos/', views.regimentos, name='regimentos'),
     path('estatuto/', views.estatuto, name='estatuto'),
     path('blog/', views.PostList.as_view(), name='blog'),
-    path('recent/', views.testAA, name='recents'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('<slug:slug>/', views.category, name='category_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

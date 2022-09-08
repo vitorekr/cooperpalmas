@@ -1,0 +1,376 @@
+{% extends "base.html" %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+  
+    <!-- Template Main CSS File -->
+    <link href="../templates/assets/css/style.css" rel="stylesheet">
+  
+  </head>
+<style>
+
+    .story-intro .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .story-intro .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .story-intro .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .story-intro .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .story-intro .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    
+    
+    .featured-members .content+.content {
+      margin-top: 100px;
+    }
+    
+    .featured-members .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .featured-members .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .featured-members .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .featured-members .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .featured-members .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /*--------------------------------------------------------------
+    # Members Cards
+    --------------------------------------------------------------*/
+    .containerMember {
+      margin-top: 100px;
+    }
+    
+    .containerMember .row .col-lg-4 {
+      display: flex;
+      justify-content: center;
+    }
+
+    :root {
+        --gradient: linear-gradient(to left top, #0cdf28 10%, #7aee5a 90%) !important;
+    }
+    
+    img {
+        width: 100%;
+        display:flexbox;
+        object-fit: cover;
+    }
+
+    body {
+        background: rgb(100, 180, 100) !important;
+    }
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+        background: rgb(100, 180, 100);
+        border: 1px solid #41b957;
+        color: rgba(250, 250, 250, 0.8);
+        margin-bottom: 2rem;
+        border-radius: 18px;
+    }
+
+    .user {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .user__image {
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .card__body {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .card__body h4 {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+    }
+
+    .user__info > small {
+        color: #667;
+    }
+    
+    .card .card-image {
+      width: 100%;
+      max-height: 340px;
+    }
+    
+    .card .card-image img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+    }
+    
+    .card .card-content {
+      position: absolute;
+      bottom: -180px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      min-height: 140px;
+      width: 100%;
+      transition: bottom .4s ease-in;
+      box-shadow: 0 -10px 10px rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .card:hover .card-content {
+      bottom: 0px;
+    }
+    
+    .card:hover .card-content h4,
+    .card:hover .card-content h5 {
+      transform: translateY(10px);
+      opacity: 1;
+    }
+    
+    .card .card-content h4,
+    .card .card-content h5 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      transition: 0.8s;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-40px);
+      transition-delay: 0.2s;
+    }
+    
+    .card .card-content h5 {
+      transition: 0.5s;
+      font-weight: 200;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+    
+    .card .card-content .social-icons {
+      list-style: none;
+      padding: 0;
+    }
+    
+    
+    .card .card-content .social-icons li {
+      margin: 10px;
+      transition: 0.5s;
+      transition-delay: calc(0.15s * var(--i));
+      transform: translateY(50px);
+    }
+    
+    
+    .card:hover .card-content .social-icons li {
+      transform: translateY(20px);
+    }
+    
+    .card .card-content .social-icons li a {
+      color: #fff;
+    }
+    
+    .card .card-content .social-icons li a span {
+      font-size: 1.3rem;
+    }
+    
+    @media(max-width: 991.5px) {
+      .container {
+          margin-top: 20px;
+      }
+    
+      .container .row .col-lg-4 {
+          margin: 20px 0px;
+      }
+    }
+    
+    /*--------------------------------------------------------------
+    # Event List
+    --------------------------------------------------------------*/
+    .event-list .card {
+      border: 0;
+      padding: 0 30px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .event-list .card-img {
+      width: calc(100% + 60px);
+      margin-left: -30px;
+      overflow: hidden;
+      z-index: 9;
+      border-radius: 0;
+    }
+    
+    .event-list .card-img img {
+      max-width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .event-list .card-body {
+      z-index: 10;
+      background: #fff;
+      border-top: 4px solid #fff;
+      padding: 30px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      margin-top: -60px;
+      transition: 0.3s;
+    }
+    
+    .event-list .card-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #24325d;
+    }
+    
+    .event-list .card-title a {
+      color: #24325d;
+      transition: 0.3s;
+    }
+    
+    .event-list .card-text {
+      color: #5e5e5e;
+    }
+    
+    .event-list .read-more a {
+      color: #777777;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+    
+    .event-list .read-more a:hover {
+      color: #006fbe;
+    }
+    
+    .event-list .card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .event-list .card:hover .card-body {
+      border-color: #006fbe;
+    }
+    
+    .event-list .card:hover .card-body .card-title a {
+      color: #006fbe;
+    }
+    
+    /*------------------------*/
+    p {
+      color: #1d284b; 
+      font-size: 24px;
+      font-family: Poppins, sans-serif;
+    }
+    
+    </style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> <strong> Bem vindos ao CooperBlog </strong></h3>
+                    <p class="text-light">Todas as novidades e anúncios da cooperativa estão aqui
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1> 
+
+    </h1>
+    <h1>
+
+    </h1>
+</header>
+
+<br><br>
+<body>
+  
+
+<div class="container" style="display: flex; flex-wrap: wrap; justify-content: center;  max-width: 1200px; margin-block: 2rem; gap: 2rem;"> 
+    <div class="row">
+      
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card" style="align-self: center;">           
+              <div class="card__header">
+                <img src="{{post.image.url}}" alt="card__image" class="card__image" width="auto" >
+              </div>
+              <div class="card__body">
+                <br>
+                
+                 <h4 style="font-size:large;" align="center">{{post.title}}</h4> 
+                 <br>
+                
+                
+              </div>
+              <div class="card__footer">
+                <div class="user align-content-lg-between">
+                <p>  <img src="https://mir-s3-cdn-cf.behance.net/projects/404/aedc9073021875.Y3JvcCwxMTAxLDg2MSwxNDksMjY5.png" alt="user__image" class="user__image"
+                 style="width: 50px; height:50px; margin: 15px; 
+                  max-width: 100%;  display: block;  object-fit: cover; clip-path: circle(50% at 50% 50%);"></p>
+                  <div class="user__info">
+                    <h5>{{post.author}}</h5>
+                    <small> <p>{{post.created_on.date.day}}/{{ post.created_on.date.month}}/{{post.created_on.date.year}}</p></small>                            
+                  </div>
+                
+                </div>
+                </div>
+                <br>
+                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-danger">Ler mais...</a >
+                    <br>
+            </div>
+        
+            <br> 
+            {% endfor %}
+        </div>
+        {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+    </div>
+</div>
+
+  
+</body>
+
+{%endblock%}

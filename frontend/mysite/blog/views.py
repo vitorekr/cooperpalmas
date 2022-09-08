@@ -4,13 +4,11 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   
-    template_name = 'index.html'
+    template_name = 'blogTest.html'
 
 class PostIndex(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   
     template_name = 'landing.html'
-
-
 
 class PostDetail(generic.DetailView):
     model = Post
@@ -39,11 +37,6 @@ def estatuto(request):
 
 def contato(request):
     return render (request, 'contact.html')
-
-def testAA(request):
-    test_list = Post.objects.order_by('-created_on')[:3]
-    context = {'test_list': test_list}
-    return render(request, 'post_detail.html', context)
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)

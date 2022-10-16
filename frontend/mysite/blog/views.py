@@ -6,6 +6,30 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   
     template_name = 'index.html'
 
+class PostListNews(generic.ListView):
+    queryset = Post.objects.filter(category_id=1) 
+    template_name = 'index.html'
+
+class PostListFeira(generic.ListView):
+    queryset = Post.objects.filter(category_id=2) 
+    template_name = 'index.html'
+
+class PostListFinanceiro(generic.ListView):
+    queryset = Post.objects.filter(category_id=3) 
+    template_name = 'index.html'
+
+class PostListTransparencia(generic.ListView):
+    queryset = Post.objects.filter(category_id=4) 
+    template_name = 'index.html'
+
+class PostListEventos(generic.ListView):
+    queryset = Post.objects.filter(category_id=5) 
+    template_name = 'index.html'
+
+class PostListInformativos(generic.ListView):
+    queryset = Post.objects.filter(category_id=6) 
+    template_name = 'index.html'
+
 class PostIndex(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')   
     template_name = 'landing.html'

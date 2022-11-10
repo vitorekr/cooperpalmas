@@ -64,11 +64,7 @@ class PostListInformativos(generic.ListView):
 
 class PostIndex(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    if queryset:
-        template_name = 'index.html'
-    else:
-        queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+    template_name = "landing.html"
 
 
 class PostDetail(generic.DetailView):

@@ -5,61 +5,61 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+    template_name = 'blog.html'
 
 
 class PostListNews(generic.ListView):
     queryset = Post.objects.filter(category_id=1)
     if queryset:
-        template_name = 'index.html'
+        template_name = 'blog.html'
     else:
         queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+        template_name = 'blog.html'
 
 
 class PostListFeira(generic.ListView):
     queryset = Post.objects.filter(category_id=2)
     if queryset:
-        template_name = 'index.html'
+        template_name = 'blog.html'
     else:
         queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+        template_name = 'blog.html'
 
 
 class PostListFinanceiro(generic.ListView):
     queryset = Post.objects.filter(category_id=3)
     if queryset:
-        template_name = 'index.html'
+        template_name = 'blog.html'
     else:
         queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+        template_name = 'blog.html'
 
 
 class PostListTransparencia(generic.ListView):
     queryset = Post.objects.filter(category_id=4)
     if queryset:
-        template_name = 'index.html'
+        template_name = 'blog.html'
     else:
         queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+        template_name = 'blog.html'
 
 
 class PostListEventos(generic.ListView):
     queryset = Post.objects.filter(category_id=5)
     if queryset:
-        template_name = 'index.html'
+        template_name = 'blog.html'
     else:
         queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+        template_name = 'blog.html'
 
 
 class PostListInformativos(generic.ListView):
     queryset = Post.objects.filter(category_id=6)
     if queryset:
-        template_name = 'index.html'
+        template_name = 'blog.html'
     else:
         queryset = Post.objects.filter(status=1).order_by('-created_on')
-        template_name = 'index.html'
+        template_name = 'blog.html'
 
 
 class PostIndex(generic.ListView):

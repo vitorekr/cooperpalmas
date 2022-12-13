@@ -136,10 +136,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GRAPPELLI_ADMIN_TITLE = '🛠 Palmas - Sistema administrativo'
-ADMIN_SITE_HEADER = "CooperPalmas Painel"
-SITE_TITLE = 'CooperPalmas'
-INDEX_TITLE = 'Palmas'
+
 
 
 JAZZMIN_SETTINGS_= {
@@ -209,3 +206,8 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+GRAPPELLI_ADMIN_TITLE = '🛠 Palmas - Sistema administrativo'
+ADMIN_SITE_HEADER = "CooperPalmas Painel"
+SITE_TITLE = 'CooperPalmas'
+INDEX_TITLE = 'Palmas'

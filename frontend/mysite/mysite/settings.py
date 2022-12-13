@@ -136,6 +136,9 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ADMIN_SITE_HEADER = "CooperPalmas Painel"
+SITE_TITLE = 'CooperPalmas'
+INDEX_TITLE = 'Palmas'
 
 
 

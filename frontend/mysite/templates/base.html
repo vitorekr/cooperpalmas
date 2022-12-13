@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +10,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  
-  
-    <!-- Template Main CSS File -->
-
-  
-
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
 </head>
 
+
     <style>
-        *{
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -47,147 +46,113 @@
 
 
 
-/* Navbar section */
-
-.nav{
-    width: 100%;
-    height: 65px;
-    /*position: fixed;*/
-    line-height: 65px;
-    text-align: center;
-    background-color: rgba(33, 123, 71, 0.8);
+nav{
+  background:  rgba(33, 123, 71, 0.8);
+  height: 80px;
+  width: 100%;
+  background-clip:content-box;
+  
 }
-
-.nav div.logo {
-    width: 180px;
-    height: 10px;
-    position: absolute;
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  text-decoration: none;  
 }
-
-.nav div.cooperpalmas {
-    width: 180px;
-    height: 10px;
-    position: absolute;
+nav ul{
+  float: right;
+  margin-right: 20px;
 }
+nav ul li{
+  display: inline;
+  line-height: 80px;
+  margin: 0 5px;
 
-.cooperpalmas {
-    left: 360px;
+  
+
 }
-
-.nav div.cooperpalmas a{
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+a.active,a:hover, a:visited{
+  background-color: #164A4F;
+  transition: .5s;
+  color:rgb(205, 206, 203);
+  text-decoration: none;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+  text-decoration: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
     text-decoration: none;
-    color: #fff;
-    font-size: 1.8em;
-    text-transform: capitalize;
-}
-
-.nav div.cooperpalmas a:hover {
-    color: #c0c0c0;
-}
-
-.nav div.main_list{
-    width: 600px;
-    height: 65px;
-    float: right;
-}
-
-.nav div.main_list ul{
-    width:100%;
-    height: 50px;
-    display:flex;
-    list-style: none;
-    align-self: flex-start;
-}
-
-.nav div.main_list ul li{
-    width: 120px;
-    height: 65px;
-}
-
-.nav div.main_list ul li a{
+  }
+  nav ul li a{
+    font-size: 16px;
     text-decoration: none;
-    color: #fff;
-    line-height: 50px;
-    text-transform: capitalize;
-    align-items: center;
-    align-self: center;
+  }
 }
-
-.nav div.main_list ul li a:hover{
-    color: #c0c0c0;
-}
-
-.nav div.media_button {
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    display: none;
-}
-
-.nav div.media_button button.main_media_button {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;;
-    outline: 0;
-    border: none;
-    cursor: pointer;
-}
-
-.nav div.media_button button.main_media_button span{
-    width: 98%;
-    height: 1px;
+@media (max-width: 858px){
+  .checkbtn{
     display: block;
-    background-color: #fff;
-    margin-top: 9px;
-    margin-bottom: 10px;
+  }
+  ul{
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    background: #164A4F;
+    top: 80px;    
+    display: block;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    text-decoration: none;
+    z-index: 2;
+  }
+  nav ul li{
+    display:block;
+    margin: 20px 0;
+    line-height: 50px;
+    z-index: 2;
+  }
+  nav ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    z-index: 2;
+  }
+  a:hover,a.active{
+    background:none;
+    background-color:  rgba(19, 87, 48, 0.8);
+    z-index: 2;
+
+
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
 }
 
-.nav div.media_button button.main_media_button:hover span:nth-of-type(1){
-    transform: rotateY(180deg);
-    transition: all 0.5s;
-    background-color: #c0c0c0;
-}
-
-.nav div.media_button button.main_media_button:hover span:nth-of-type(2){
-    transform: rotateY(180deg);
-    transition: all 0.4s;
-    background-color: #c0c0c0;
-}
-
-.nav div.media_button button.main_media_button:hover span:nth-of-type(3){
-    transform: rotateY(180deg);
-    transition: all 0.3s;
-    background-color: #c0c0c0;
-}
-
-.nav div.media_button button.active span:nth-of-type(1) {
-    transform: rotate3d(0, 0, 1, 45deg);
-    position: absolute;
-    margin: 0;
-}
-
-.nav div.media_button button.active span:nth-of-type(2) {
-    display: none;
-}
-
-.nav div.media_button button.active span:nth-of-type(3) {
-    transform: rotate3d(0, 0, 1, -45deg);
-    position: absolute;
-    margin: 0;
-}
-
-.nav div.media_button button.active:hover span:nth-of-type(1) {
-    transform: rotate3d(0, 0, 1, 20deg);
-}
-
-.nav div.media_button button.active:hover span:nth-of-type(3) {
-    transform: rotate3d(0, 0, 1, -20deg);
-}
-
-/* Home section */
 
 .home{
     width: 100%;
@@ -213,49 +178,8 @@
     .container{
         margin: 0;
     }
-    
-    .nav div.cooperpalmas {
-        margin-left: 15px;
-    }
-    
-    .nav div.main_list{
-        width: 100%;
-        margin-top: 65px;
-        height: 0px;
-        overflow: hidden;
-    }
-    
-    .nav div.show_list{
-        height: 200px;
-    }
-    
-    .nav div.main_list ul{
-        flex-direction: column;
-        width: 100%;
-        height: 200px;
-        top: 80px;
-        right: 0;
-        left: 0;
-    }
-    
-    .nav div.main_list ul li{
-        width: 100%;
-        height: 40px;
-        background-color:rgba(33, 123, 71, 0.8);
-    }
-    
-    .nav div.main_list ul li a{
-      text-align: center;
-        line-height: 40px;
-        width: 100%;
-        height: 40px;
-        display: table;
-    }
-    
-    .nav div.media_button{
-        display: block;
-    }
 }
+  
 .masthead {
             background: transparent;
             height: auto;
@@ -298,32 +222,26 @@
 
     </style>
 <header>
-<nav class="nav">
-    <div class="container">
-        <div class="cooperpalmas">
-            <a href="{% url 'home' %}">CooperPalmas</a>
-        </div>
-        <div class="main_list" id="mainListDiv">
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'sobre' %}">Sobre</a></li>
-                <li><a href="{% url 'regimentos' %}">Regimento</a></li>                
-                <li><a href="{% url 'estatuto' %}">Estatuto</a></li>            
-                <li><a href="{% url 'blog' %}">Blog</a></li>
-                <li><a href="/admin">Admin</a></li>
-            </ul>
-        </div>
-        <div class="media_button">
-            <button class="main_media_button" id="mediaButton">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-</nav>
-</header>
+    <nav class="navbar-fixed-top">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">
+            <a href="{% url 'home' %}" style="text-decoration: none; font-weight:9">CooperPalmas</a>
+           <!--<img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/80d85673021875.5bfc1395724f0.png" width="100px" height="70px">--> </label>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            <li><a href="{% url 'regimentos' %}">Regimento</a></li>                
+            <li><a href="{% url 'estatuto' %}">Estatuto</a></li>            
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="/admin">Admin</a></li>
+      </nav>
+      </header>
 <body>
+     
+  
         
        
         {% block content %}

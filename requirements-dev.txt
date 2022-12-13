@@ -12,3 +12,4 @@ python-decouple
 sqlparse
 static3
 whitenoise
+django-grappelli

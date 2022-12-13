@@ -1,12 +1,41 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-</head>
-{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Sobre - Palmas</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="../templates/assets/css/style.css" rel="stylesheet">
+  
+  </head>
+
+
+
 <style>
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 .bg-image {
@@ -24,6 +53,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 50;
 }
 
 /* Position text in the middle of the page/image */
@@ -46,7 +76,7 @@
 
 /*--------------------------------------------------------------
 # Top Bar
---------------------------------------------------------------*/
+--------------------------------------------------------------
 #topbar {
   height: 60px;
   padding: 0;
@@ -97,7 +127,7 @@
 #topbar .cta a:hover {
   background: #f1a40a;
 }
-
+*/
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -130,6 +160,7 @@
 
 #header .logo img {
   max-height: 10px;
+  z-index: 50;
 }
 
 .header-inner-pages {
@@ -208,11 +239,10 @@ https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/80d85673021875.5bfc
   overflow: hidden;
   position: relative;  
   background: url("https://www.coohaj.org.br/COOHAJ/arquivos/Empreendimentos/Lago%20Oeste/Lago%20Oeste%20(1).JPG")  center no-repeat;
-  background-size: cover;
-  
+  background-size: cover;  
   position: relative;
   margin-bottom: -39px;
-  z-index: 99;
+  
   transition: 0.3s;
 
 }
@@ -432,6 +462,7 @@ https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/80d85673021875.5bfc
 .contact {
   background: url("../img/contact-bg.png") left center no-repeat;
   position: relative;
+  z-index: -20;
 }
 
 .contact:before {
@@ -596,20 +627,58 @@ https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/80d85673021875.5bfc
 }
 
 
-</style>
 
+
+.story-intro .content h3 {
+      font-weight: 600;
+      font-size: 26px;
+    }
+    
+    .story-intro .content ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .story-intro .content ul li {
+      padding-bottom: 10px;
+    }
+    
+    .story-intro .content ul i {
+      font-size: 20px;
+      padding-right: 4px;
+      color: #006fbe;
+    }
+    
+    .story-intro .content p:last-child {
+      margin-bottom: 0;
+    }
+    
+
+  
+
+
+
+    </style>
+  </header>
 <body>
 
 
-  <!-- ======= Hero Section ======= -->
+  
+  <main id="main">
+
+   
+     
+
+
+ 
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="bg-text">
-          <h2 class="animate__animated animate__fadeInDown">Bem vindos ao site <span>CooperPalmas</span></h2>
-          <p class="animate__animated animate__fadeInUp">A nossa Cooperativa fica no Núcleo Rural Lago Oeste é a região mais ecológica, com natureza preservada e com as mais belas 
+          <h2 class="animate__animated animate__fadeInDown" style="letter-spacing: 2px;" >Bem vindos ao site <span>CooperPalmas</span></h2>
+          <p class="animate__animated animate__fadeInUp" style="letter-spacing: 2px;">A nossa Cooperativa fica no Núcleo Rural Lago Oeste é a região mais ecológica, com natureza preservada e com as mais belas 
             paisagens naturais do Distrito Federal. Venha nos conhecer melhor e clique em saiba mais:</p>
           <a href="{% url 'sobre'  %}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Saiba mais</a>
         </div>
@@ -633,60 +702,36 @@ https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/80d85673021875.5bfc
         </div>
       </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-arrow-left-short" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-arrow-right-short" aria-hidden="true"></span>
-      </a>
+     
     </div>
   </section><!-- End Hero -->
 
   <br><br>
-  <main id="main">
-    
-    <section id="icon-boxes" class="icon-boxes">
+ 
+      
+  <section id="icon-boxes" class="icon-boxes">
         
-        <div class="container">
-  
-          <div class="row">
-            {% for post in post_list %} {% if forloop.counter < 5 %}
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-                
-              <div class="icon-box">
-                <div class="icon">{{post.img.url}}</i></div>
-                <div class="icon">{{ post.created_on.date.month}}/{{post.created_on.date.year}}</i></div>
-                <h4 class="title"><a href="{% url 'post_detail' post.slug  %}">{{post.title}}</a></h4>
-                <p class="description">{{post.category}}</p>
-              </div>
-             
-            </div>
-            {% endif %}  {% endfor %}
+    <div class="container">
 
-
+      <div class="row">
+        {% for post in post_list %} {% if forloop.counter < 5 %}
+        <div class="col-md-6 col-lg-3  align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            
+          <div class="icon-box" >
+            <div class="icon">{{post.img.url}}</i></div>
+            <div class="icon" align="center">{{ post.created_on.date.month}}/{{post.created_on.date.year}}</i></div>
+            <h4 class="title"><a href="{% url 'post_detail' post.slug  %}">{{post.title}}</a></h4>
+            <p class="description" align="center">{{post.category}}</a></p>
           </div>
-  
+         
         </div>
-      </section><!-- End Icon Boxes Section -->
+        {% endif %}  {% endfor %}
 
-    <!-- ======= Icon Boxes Section ======= 
-    <section id="icon-boxes" class="icon-boxes">
-      <div class="container">
 
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-            {% for post in post_list %} {% if forloop.counter < 5 %}
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">{{post.title}}</a></h4>
-              <p class="description">{{post.sub_content}}</p>
-            </div>
-          </div>
-          {% endif %} {% endfor %}
-        </div>
       </div>
-    </section><!-- End Icon Boxes Section -->
+
+    </div>
+  </section><!-- End Icon Boxes Section -->
 
   <br><br>
 
@@ -712,8 +757,6 @@ https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/80d85673021875.5bfc
       </div>
     </section><!-- End Cta Section -->
 <br>
-
-
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact" >
@@ -787,9 +830,36 @@ https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/80d85673021875.5bfc
 
 
 
-  {% endblock %}
+
   </main><!-- End #main -->
   
-  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../templates/assets/js/main.js"></script>
+
+{% endblock %}
+</main>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../templates/assets/js/main.js"></script>
+
 
 </body>
+
